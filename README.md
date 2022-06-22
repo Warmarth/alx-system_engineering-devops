@@ -1,2 +1,2 @@
 #!/bin/bash
-chmob u+x 0-current_working_directory
+Task 0.where am I?
