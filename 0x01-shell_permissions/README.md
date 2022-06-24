@@ -1,2 +1,2 @@
 #!/bin/bash
-:wq
+a script that prints the effective username of the current user.
