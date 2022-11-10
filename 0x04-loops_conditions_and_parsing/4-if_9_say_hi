@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
+# the 9th iteration shows Best School, then Hi on a new line
+
 i=1
 while (( $i <= 10 ))
 do
@@ -10,4 +12,4 @@ do
 	fi
 		echo "Best School"
 		((i++))
-	done
+done
