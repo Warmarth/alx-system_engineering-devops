@@ -2,8 +2,8 @@
 # This script is displaying "Best School" 10 times
 # the 9th iteration shows Best School, then Hi on a new line
 
-i=0
-while (( $i <= 10 ))
+i=1
+while (( i <= 10 ))
 do
 	
 	if [ $i -eq 10 ];
