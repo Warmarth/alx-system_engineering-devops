@@ -33,21 +33,21 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-# start of parameters for munstaplay.tech
+# start of parameters for zeeweb.tech
 frontend betascribbles.tech-http-frontend
 	bind	 *:80
 	http-request set-header X-Forwarded-Proto http
 	default_backend	 beta-scribbles.tech-backend
 
 
-frontend  munstaplay.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/munstaplay.tech.pem
+frontend  zeeweb.tech-https-frontend
+	bind *:443 ssl crt /etc/ssl/zeeweb.tech.pem
 	http-request set-header X-Forwarded-Proto https
-        default_backend munstaplay.tech-backend
+        default_backend zeeweb.tech-backend
 
 
-backend munstaplay.tech-backend
+backend zeeweb.tech-backend
         balance roundrobin
-        server 74531-web-01 100.26.244.67:80 check
-        server 74531-web-02 34.232.76.207:80 check
+        server 82202-web-01 100.24.74.197:80 check
+        server 82202-web-02 100.25.147.92:80 check
 # end of parameters

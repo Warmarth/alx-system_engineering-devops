@@ -35,19 +35,19 @@ defaults
 
 
 
-# start of parameters for munstaplay.tech
-frontend zeeweb.tech-http-frontend
+# start of parameters for zeeweb.tech
+frontend nwabueze.tech-http-frontend
         bind     *:80
         redirect scheme https code 301 if !{ ssl_fc }
         http-request set-header X-Forwarded-Proto http
-        default_backend  munstaplay.tech-backend
+        default_backend  zeeweb.tech-backend
 frontend b3zaleel-alx.tech-https-frontend
-        bind *:443 ssl crt /etc/letsencrypt/live/www.munstaplay.tech/fullchain.pem
+        bind *:443 ssl crt /etc/letsencrypt/live/www.zeeweb.tech/fullchain.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend zeeweb.tech-backend
-backend munstaplay-backend
+        default_backend nwabueze.tech-backend
+backend zeeweb-backend
         balance roundrobin
-        server 74531-web-01 100.26.244.67:80 check
-        server 74531-web-02 34.232.76.207:80 check
+        server 82202-web-01 100.24.74.197:80 check
+        server 82202-web-02 52.91.117.197:80 check
 # end of parameters
                                             
