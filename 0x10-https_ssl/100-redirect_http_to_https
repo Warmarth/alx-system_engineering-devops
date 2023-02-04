@@ -33,21 +33,15 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
+# start of parameters for www.munstaplay.tech
+frontend myservers
+        bind *:80
+        bind *:443 ssl crl /etc/haproxy/certs/www.munstaplay.tech.pem
+        redirect scheme https code 301 if { hdr(Host) -i www.munstaplay.tech } !{ ssl_fc }
+        default_backend myservers
 
-
-# start of parameters for munstaplay.tech
-frontend zeeweb.tech-http-frontend
-        bind     *:80
-        redirect scheme https code 301 if !{ ssl_fc }
-        http-request set-header X-Forwarded-Proto http
-        default_backend  munstaplay.tech-backend
-frontend b3zaleel-alx.tech-https-frontend
-        bind *:443 ssl crt /etc/letsencrypt/live/www.munstaplay.tech/fullchain.pem
-        http-request set-header X-Forwarded-Proto https
-        default_backend zeeweb.tech-backend
-backend munstaplay-backend
+backend myservers
         balance roundrobin
         server 74531-web-01 100.26.244.67:80 check
         server 74531-web-02 34.232.76.207:80 check
-# end of parameters
-                                            
+# end of parameters   
